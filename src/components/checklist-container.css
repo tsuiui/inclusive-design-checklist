@@ -1,9 +1,13 @@
+.checklist__question {
+  margin-bottom: 48px;
+}
+
 .radio-group {
-  margin-bottom: 16px;
   padding: 8px 16px;
+  margin-bottom: 16px;
   height: 70px;
   box-sizing: border-box;
-  max-width: 50%;
+  max-width: 60%;
   font-size: 1.2rem;
   position: relative;
   left: 12px;
