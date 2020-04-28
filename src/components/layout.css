@@ -23,6 +23,11 @@ button:focus {
   background: #006aff;
 }
 
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
 main > p {
   max-width: 600px;
   font-size: 1.2rem;

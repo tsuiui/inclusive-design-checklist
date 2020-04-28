@@ -9,7 +9,13 @@ import SEO from "../components/seo"
 const IndexPage = () => {
   const [checklistStarted, setChecklistStarted] = useState(false)
   const [checklistType, setChecklistType] = useState(null)
-  const [question, setQuestion] = useState(0)
+  const [question, setQuestion] = useState(-1)
+  const [optionSelected, setOptionSelected] = useState(false)
+
+  const handleNextQuestion = () => {
+    setOptionSelected(false)
+    setQuestion(question + 1)
+  }
 
   if (!checklistStarted) {
     return (
@@ -18,23 +24,31 @@ const IndexPage = () => {
       </Layout>
     )
   } else {
-    if (question === 0) {
+    if (question === -1) {
       return (
         <Layout>
           <ChecklistContainer
             checklistType={checklistType}
             setChecklistType={setChecklistType}
             question={question}
+            setOptionSelected={setOptionSelected}
           />
-          <button onClick={() => setQuestion(question + 1)}>Next</button>
+          <button
+            disabled={!optionSelected}
+            onClick={() => handleNextQuestion()}
+          >
+            Next
+          </button>
         </Layout>
       )
     } else {
       return (
         <Layout>
-          <Question question={question} checklistType={checklistType} />
-          <button onClick={() => setQuestion(question - 1)}>Back</button>
-          <button onClick={() => setQuestion(question + 1)}>Next</button>
+          <div className="question-wrapper">
+            <Question question={question} checklistType={checklistType} />
+            <button onClick={() => setQuestion(question - 1)}>Back</button>
+            <button onClick={() => setQuestion(question + 1)}>Next</button>
+          </div>
         </Layout>
       )
     }

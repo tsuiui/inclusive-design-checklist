@@ -1,18 +1,25 @@
 import React from "react"
 import "./checklist-container.css"
 
-export default ({ checklistType, setChecklistType }) => {
+export default ({ setChecklistType, setOptionSelected }) => {
+  const handleInputEvent = checklistType => {
+    setChecklistType(checklistType)
+    setOptionSelected(true)
+  }
   return (
     <>
+      <h2 className="checklist__question">
+        Are you primarily a designer or a developer?
+      </h2>
       <div className="radio-group">
         <input
           type="radio"
           id="design"
           name="checklist-type"
           value="design"
-          onChange={() => setChecklistType("design")}
+          onChange={() => handleInputEvent("design")}
         />
-        <label htmlFor="design">Design</label>
+        <label htmlFor="design">A designer</label>
       </div>
       <div className="radio-group">
         <input
@@ -20,9 +27,9 @@ export default ({ checklistType, setChecklistType }) => {
           id="development"
           name="checklist-type"
           value="development"
-          onChange={() => setChecklistType("development")}
+          onChange={() => handleInputEvent("development")}
         />
-        <label htmlFor="development">Development</label>
+        <label htmlFor="development">A developer</label>
       </div>
       <div className="radio-group">
         <input
@@ -30,9 +37,9 @@ export default ({ checklistType, setChecklistType }) => {
           id="combined"
           name="checklist-type"
           value="combined"
-          onChange={() => setChecklistType("combination")}
+          onChange={() => handleInputEvent("combination")}
         />
-        <label htmlFor="combined">Both</label>
+        <label htmlFor="combined">I do both!</label>
       </div>
     </>
   )

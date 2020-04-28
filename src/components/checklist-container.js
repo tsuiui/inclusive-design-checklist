@@ -9,12 +9,19 @@ const CHECKLIST_TYPE = {
   COMBINATION: "combination",
 }
 
-export default ({ checklistType, setChecklistType, question }) => {
+export default ({
+  checklistType,
+  setChecklistType,
+  question,
+  setOptionSelected,
+}) => {
   return (
     <div className="checklist-container">
-      <h2 className="checklist__question">{questions[0].question}</h2>
-      {question === 0 ? (
-        <SelectChecklistType setChecklistType={setChecklistType} />
+      {question === -1 ? (
+        <SelectChecklistType
+          setOptionSelected={setOptionSelected}
+          setChecklistType={setChecklistType}
+        />
       ) : null}
     </div>
   )
