@@ -12,6 +12,18 @@ export default () => {
   const [checklistGuidelines, setChecklistGuidelines] = useState([])
   const [checklistComplete, setChecklistComplete] = useState(false)
 
+  const restartChecklist = () => {
+    setChecklistType(null)
+    setQuestion(-1)
+    setOptionSelected(false)
+    setChecklistGuidelines([])
+    setChecklistComplete(false)
+    designQuestions.forEach(question => {
+      question.addToChecklist = false
+      question.visited = false
+    })
+  }
+
   const handleNextQuestion = (isChecklistType = false) => {
     if (!isChecklistType) {
       const guidelineSelected = document.querySelector("#yes").checked
@@ -100,6 +112,7 @@ export default () => {
             </button>
           )}
           <ul id="checklist"></ul>
+          <button onClick={() => restartChecklist()}>Restart checklist</button>
         </>
       )
     } else {
