@@ -1,5 +1,23 @@
+.checklist-container {
+  display: grid;
+  grid-template-rows: [question-row-start] 80px [question-row-end options-row-start] 300px [options-row-end buttons-row-start] 42px [buttons-row-end];
+  grid-template-columns: [col-1-start] 600px [col-1-end];
+}
+
 .checklist__question {
-  margin-bottom: 48px;
+  margin: 0;
+  grid-row: question-row-start / question-row-end;
+  grid-column: col-1-start / col-1-end;
+}
+
+.radio-container {
+  grid-row: options-row-start / options-row-end;
+  grid-column: col-1-start / col-1-end;
+}
+
+.button-container {
+  grid-row: buttons-row-start / buttons-row-end;
+  grid-column: col-1-start / col-1-end;
 }
 
 .radio-group {

@@ -11,15 +11,59 @@ export default () => {
   const [optionSelected, setOptionSelected] = useState(false)
   const [checklistGuidelines, setChecklistGuidelines] = useState([])
 
-  const handleNextQuestion = () => {
-    setOptionSelected(false)
+  const handleNextQuestion = (isChecklistType = false) => {
+    if (!isChecklistType) {
+      const guidelineSelected = document.querySelector("#yes").checked
+      if (guidelineSelected) {
+        const guidelines = designQuestions[question].guidelines
+
+        designQuestions[question].addToChecklist = true
+        setChecklistGuidelines([...checklistGuidelines, ...guidelines])
+      } else {
+        // If current guidelines contains the old answer
+        // remove it
+        const guidelines = designQuestions[question].guidelines
+        if (checklistGuidelines.includes(guidelines[0])) {
+          const filteredGuidelines = checklistGuidelines.filter(
+            guideline => !guidelines.includes(guideline)
+          )
+          designQuestions[question].addToChecklist = false
+        }
+      }
+      if (question + 1 < designQuestions.length) {
+        if (designQuestions[question + 1].visited === true) {
+          if (designQuestions[question + 1].addToChecklist === true) {
+            document.querySelector("#yes").checked = true
+          } else {
+            document.querySelector("#no").checked = true
+          }
+          setOptionSelected(true)
+        } else {
+          document.querySelector("#yes").checked = false
+          document.querySelector("#no").checked = false
+          setOptionSelected(false)
+        }
+      }
+      designQuestions[question].visited = true
+    }
+
     setQuestion(question + 1)
   }
 
-  const handleYes = () => {
-    const guidelines = designQuestions[question].guidelines
-    setChecklistGuidelines([...checklistGuidelines, ...guidelines])
-    handleNextQuestion()
+  const handlePreviousQuestion = () => {
+    if (question - 1 >= 0) {
+      if (designQuestions[question - 1].addToChecklist === true) {
+        document.querySelector("#yes").checked = true
+      } else {
+        document.querySelector("#no").checked = true
+      }
+    }
+
+    setQuestion(question - 1)
+  }
+
+  const handleSelection = e => {
+    setOptionSelected(true)
   }
 
   const handleViewChecklist = () => {
@@ -49,8 +93,9 @@ export default () => {
       return (
         <Question
           question={designQuestions[question]}
-          handleYes={handleYes}
+          handleSelection={handleSelection}
           handleNextQuestion={handleNextQuestion}
+          handlePreviousQuestion={handlePreviousQuestion}
         />
       )
     }
