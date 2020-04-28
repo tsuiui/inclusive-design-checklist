@@ -1,4 +1,4 @@
-export const questions = [
+export const designQuestions = [
   {
     question: "Does your design include animated or moving content?",
     answers: ["Yes", "No"],

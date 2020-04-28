@@ -1,9 +1,11 @@
 import React from "react"
 
-export default ({ question, checklistType }) => {
+export default ({ question, handleYes, handleNextQuestion }) => {
   return (
     <div>
-      <h1>{`You selected the ${checklistType} checklist`}</h1>
+      <h2>{question.question}</h2>
+      <button onClick={() => handleYes()}>Yes</button>
+      <button onClick={() => handleNextQuestion()}>No</button>
     </div>
   )
 }

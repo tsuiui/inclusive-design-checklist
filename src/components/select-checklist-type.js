@@ -1,7 +1,12 @@
 import React from "react"
 import "./checklist-container.css"
 
-export default ({ setChecklistType, setOptionSelected }) => {
+export default ({
+  setChecklistType,
+  setOptionSelected,
+  handleNextQuestion,
+  optionSelected,
+}) => {
   const handleInputEvent = checklistType => {
     setChecklistType(checklistType)
     setOptionSelected(true)
@@ -41,6 +46,9 @@ export default ({ setChecklistType, setOptionSelected }) => {
         />
         <label htmlFor="combined">I do both!</label>
       </div>
+      <button disabled={!optionSelected} onClick={() => handleNextQuestion()}>
+        Next
+      </button>
     </>
   )
 }

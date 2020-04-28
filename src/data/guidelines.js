@@ -1,4 +1,4 @@
-export default const principles = {
+const principles = {
   "2.2.2": {
     link: "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html",
     title: "2.2.2: Pause, Stop, Hide",
@@ -16,6 +16,12 @@ export default const principles = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html",
     title: "2.4.4: Link Purpose",
+  },
+
+  "3.2.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-receive-focus.html",
+    title: "3.2.1: Consistent Behavior Receive Focus",
   },
   "3.2.2": {
     link:
@@ -98,3 +104,5 @@ export default const principles = {
     title: "2.4.5: Multiple Ways",
   },
 }
+
+export default principles
