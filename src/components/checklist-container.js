@@ -10,6 +10,7 @@ export default () => {
   const [question, setQuestion] = useState(-1)
   const [optionSelected, setOptionSelected] = useState(false)
   const [checklistGuidelines, setChecklistGuidelines] = useState([])
+  const [checklistComplete, setChecklistComplete] = useState(false)
 
   const handleNextQuestion = (isChecklistType = false) => {
     if (!isChecklistType) {
@@ -68,10 +69,15 @@ export default () => {
   }
 
   const handleViewChecklist = () => {
+    setChecklistComplete(true)
+    const checklist = document.querySelector("#checklist")
     checklistGuidelines.forEach(guideline => {
-      console.log(guideline)
       let { link, title } = guidelines[guideline]
-      console.log(title)
+
+      const listItem = document.createElement("li")
+      listItem.innerText = title
+
+      checklist.appendChild(listItem)
     })
   }
 
@@ -87,9 +93,15 @@ export default () => {
       )
     } else if (question === designQuestions.length) {
       return (
-        <button onClick={() => handleViewChecklist()}>View my checklist</button>
+        <>
+          {!checklistComplete && (
+            <button onClick={() => handleViewChecklist()}>
+              View my checklist
+            </button>
+          )}
+          <ul id="checklist"></ul>
+        </>
       )
-      return <h1>This is the last question</h1>
     } else {
       return (
         <Question
