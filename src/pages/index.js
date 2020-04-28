@@ -17,6 +17,11 @@ const IndexPage = () => {
     setQuestion(question + 1)
   }
 
+  const handlePreviousQuestion = () => {
+    setOptionSelected(false)
+    setQuestion(question - 1)
+  }
+
   if (!checklistStarted) {
     return (
       <Layout>
@@ -27,18 +32,23 @@ const IndexPage = () => {
     if (question === -1) {
       return (
         <Layout>
-          <ChecklistContainer
-            checklistType={checklistType}
-            setChecklistType={setChecklistType}
-            question={question}
-            setOptionSelected={setOptionSelected}
-          />
-          <button
-            disabled={!optionSelected}
-            onClick={() => handleNextQuestion()}
-          >
-            Next
-          </button>
+          <div className="form-wrapper">
+            <ChecklistContainer
+              checklistType={checklistType}
+              setChecklistType={setChecklistType}
+              question={question}
+              setOptionSelected={setOptionSelected}
+            />
+            {question >= 0 ? (
+              <button onClick={() => handlePreviousQuestion()}>Back</button>
+            ) : null}
+            <button
+              disabled={!optionSelected}
+              onClick={() => handleNextQuestion()}
+            >
+              Next
+            </button>
+          </div>
         </Layout>
       )
     } else {
