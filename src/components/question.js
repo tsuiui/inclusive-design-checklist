@@ -5,9 +5,10 @@ export default ({
   handleSelection,
   handleNextQuestion,
   handlePreviousQuestion,
+  optionSelected,
 }) => {
   return (
-    <div>
+    <>
       <h2 className="checklist__question">{question.question}</h2>
       <div className="radio-container">
         <div className="radio-group">
@@ -32,9 +33,11 @@ export default ({
         </div>
       </div>
       <div className="button-container">
-        <button onClick={() => handleNextQuestion()}>Next</button>
         <button onClick={() => handlePreviousQuestion()}>Back</button>
+        <button disabled={!optionSelected} onClick={() => handleNextQuestion()}>
+          Next
+        </button>
       </div>
-    </div>
+    </>
   )
 }

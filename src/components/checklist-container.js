@@ -57,6 +57,7 @@ export default () => {
       } else {
         document.querySelector("#no").checked = true
       }
+      setOptionSelected(true)
     }
 
     setQuestion(question - 1)
@@ -96,6 +97,7 @@ export default () => {
           handleSelection={handleSelection}
           handleNextQuestion={handleNextQuestion}
           handlePreviousQuestion={handlePreviousQuestion}
+          optionSelected={optionSelected}
         />
       )
     }
