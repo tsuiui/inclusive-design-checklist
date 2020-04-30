@@ -22,6 +22,7 @@ export default () => {
       question.addToChecklist = false
       question.visited = false
     })
+    document.querySelector("#checklist").innerHTML = null
   }
 
   const handleNextQuestion = (isChecklistType = false) => {
@@ -84,12 +85,37 @@ export default () => {
     setChecklistComplete(true)
     const checklist = document.querySelector("#checklist")
     checklistGuidelines.forEach(guideline => {
-      let { link, title } = guidelines[guideline]
+      let { link, title, goal, solution } = guidelines[guideline]
+      const wrapper = document.createElement("div")
+      wrapper.classList.add("checklist-item-wrapper")
 
-      const listItem = document.createElement("li")
-      listItem.innerText = title
+      const titleLink = document.createElement("a")
+      titleLink.href = link
+      titleLink.classList.add("checklist-item-title")
+      titleLink.innerText = title
+      const titleNode = document.createElement("h1")
+      titleNode.appendChild(titleLink)
 
-      checklist.appendChild(listItem)
+      const goalTitle = document.createElement("h2")
+      goalTitle.classList.add("checklist-sub-title")
+      goalTitle.innerText = "Goal"
+
+      const goalNode = document.createElement("p")
+      goalNode.innerText = goal
+
+      const solutionTitle = document.createElement("h2")
+      solutionTitle.classList.add("checklist-sub-title")
+      solutionTitle.innerText = "Solution"
+
+      const solutionNode = document.createElement("p")
+      solutionNode.innerText = solution
+
+      wrapper.appendChild(titleNode)
+      wrapper.appendChild(goalTitle)
+      wrapper.appendChild(goalNode)
+      wrapper.appendChild(solutionTitle)
+      wrapper.appendChild(solutionNode)
+      checklist.appendChild(wrapper)
     })
   }
 
@@ -130,7 +156,7 @@ export default () => {
           </>
         )}
 
-        <ul id="checklist"></ul>
+        <div id="checklist"></div>
         {checklistComplete && (
           <button onClick={() => restartChecklist()}>Restart checklist</button>
         )}

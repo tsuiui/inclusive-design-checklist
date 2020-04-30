@@ -68,3 +68,22 @@ input[type="radio"]:checked + label::before {
 input[type="radio"]:checked + label {
   color: #fff;
 }
+
+#checklist {
+  position: relative;
+  padding: 60px;
+}
+
+.checklist-item-wrapper {
+  max-width: 750px;
+  border-bottom: 2px solid #e0e4ea;
+  padding: 40px 0;
+}
+
+.checklist-item-title {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  display: inline-block;
+}
