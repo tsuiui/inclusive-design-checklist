@@ -1,4 +1,10 @@
 import React from "react"
+import {
+  designQuestions,
+  developmentQuestions,
+  combinedQuestions,
+} from "../data/questions"
+
 import "./checklist-container.css"
 
 export default ({
@@ -6,9 +12,17 @@ export default ({
   setOptionSelected,
   handleNextQuestion,
   optionSelected,
+  setRelevantQuestions,
 }) => {
   const handleInputEvent = checklistType => {
     setChecklistType(checklistType)
+    if (checklistType === "design") {
+      setRelevantQuestions(designQuestions)
+    } else if (checklistType === "development") {
+      setRelevantQuestions(developmentQuestions)
+    } else {
+      setRelevantQuestions(combinedQuestions)
+    }
     setOptionSelected(true)
   }
   return (

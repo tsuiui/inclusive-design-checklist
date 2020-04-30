@@ -1,4 +1,4 @@
-const principles = {
+const guidelines = {
   "2.2.2": {
     link: "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html",
     title: "2.2.2: Pause, Stop, Hide",
@@ -106,6 +106,15 @@ const principles = {
     solution:
       "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: large-scale text and images of large-scale text have a contrast ratio of at least 3:1, text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement, and text that is part of a logo or brand name has no minimum contrast requirement.",
   },
+  "1.4.4": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html",
+    title: "1.4.4: Resize Text",
+    goal:
+      "The goal of this principle is to ensure that visually rendered text, including text-based controls (text characters that have been displayed so that they can be seen [vs. text characters that are still in data form such as ASCII]) can be scaled successfully so that it can be read directly by people with mild visual disabilities, without requiring the use of assistive technology such as a screen magnifier.",
+    solution:
+      "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+  },
   "1.4.5": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html",
@@ -187,6 +196,15 @@ const principles = {
     solution:
       "More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.",
   },
+  "2.4.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html",
+    title: "2.4.1: Bypass Blocks",
+    goal:
+      "The goal of this principle is to allow people who navigate sequentially through content more direct access to the primary content of the Web page.",
+    solution:
+      "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+  },
 }
 
-export default principles
+export default guidelines

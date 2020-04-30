@@ -2,7 +2,7 @@ import React from "react"
 
 export default ({
   question,
-  handleSelection,
+  setOptionSelected,
   handleNextQuestion,
   handlePreviousQuestion,
   optionSelected,
@@ -17,7 +17,7 @@ export default ({
             id="yes"
             name="question-answer"
             value="yes"
-            onChange={e => handleSelection(e)}
+            onChange={() => setOptionSelected(true)}
           />
           <label htmlFor="yes">Yes</label>
         </div>
@@ -27,7 +27,7 @@ export default ({
             id="no"
             name="question-answer"
             value="no"
-            onChange={e => handleSelection(e)}
+            onChange={() => setOptionSelected(true)}
           />
           <label htmlFor="no">No</label>
         </div>

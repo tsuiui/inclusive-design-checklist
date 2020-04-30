@@ -1,27 +1,45 @@
 import React, { useState } from "react"
 import SelectChecklistType from "./select-checklist-type"
 import Question from "./question"
-import { designQuestions } from "../data/questions"
+import {
+  designQuestions,
+  developmentQuestions,
+  combinedQuestions,
+} from "../data/questions"
 import guidelines from "../data/guidelines"
 import "./checklist-container.css"
 
 export default () => {
   const [checklistType, setChecklistType] = useState(null)
   const [question, setQuestion] = useState(-1)
+  const [relevantQuestions, setRelevantQuestions] = useState(-1)
   const [optionSelected, setOptionSelected] = useState(false)
   const [checklistGuidelines, setChecklistGuidelines] = useState([])
   const [checklistComplete, setChecklistComplete] = useState(false)
 
   const restartChecklist = () => {
+    if (checklistType === "design") {
+      designQuestions.forEach(question => {
+        question.addToChecklist = false
+        question.visited = false
+      })
+    } else if (checklistType === "development") {
+      developmentQuestions.forEach(question => {
+        question.addToChecklist = false
+        question.visited = false
+      })
+    } else {
+      combinedQuestions.forEach(question => {
+        question.addToChecklist = false
+        question.visited = false
+      })
+    }
     setChecklistType(null)
     setQuestion(-1)
     setOptionSelected(false)
     setChecklistGuidelines([])
     setChecklistComplete(false)
-    designQuestions.forEach(question => {
-      question.addToChecklist = false
-      question.visited = false
-    })
+
     document.querySelector("#checklist").innerHTML = null
   }
 
@@ -29,24 +47,25 @@ export default () => {
     if (!isChecklistType) {
       const guidelineSelected = document.querySelector("#yes").checked
       if (guidelineSelected) {
-        const guidelines = designQuestions[question].guidelines
+        const guidelines = relevantQuestions[question].guidelines
 
-        designQuestions[question].addToChecklist = true
+        relevantQuestions[question].addToChecklist = true
         setChecklistGuidelines([...checklistGuidelines, ...guidelines])
       } else {
         // If current guidelines contains the old answer
         // remove it
-        const guidelines = designQuestions[question].guidelines
+        const guidelines = relevantQuestions[question].guidelines
         if (checklistGuidelines.includes(guidelines[0])) {
           const filteredGuidelines = checklistGuidelines.filter(
             guideline => !guidelines.includes(guideline)
           )
-          designQuestions[question].addToChecklist = false
+          relevantQuestions[question].addToChecklist = false
+          setChecklistGuidelines(filteredGuidelines)
         }
       }
-      if (question + 1 < designQuestions.length) {
-        if (designQuestions[question + 1].visited === true) {
-          if (designQuestions[question + 1].addToChecklist === true) {
+      if (question + 1 < relevantQuestions.length) {
+        if (relevantQuestions[question + 1].visited === true) {
+          if (relevantQuestions[question + 1].addToChecklist === true) {
             document.querySelector("#yes").checked = true
           } else {
             document.querySelector("#no").checked = true
@@ -58,7 +77,7 @@ export default () => {
           setOptionSelected(false)
         }
       }
-      designQuestions[question].visited = true
+      relevantQuestions[question].visited = true
     }
 
     setQuestion(question + 1)
@@ -66,7 +85,7 @@ export default () => {
 
   const handlePreviousQuestion = () => {
     if (question - 1 >= 0) {
-      if (designQuestions[question - 1].addToChecklist === true) {
+      if (relevantQuestions[question - 1].addToChecklist === true) {
         document.querySelector("#yes").checked = true
       } else {
         document.querySelector("#no").checked = true
@@ -75,10 +94,6 @@ export default () => {
     }
 
     setQuestion(question - 1)
-  }
-
-  const handleSelection = e => {
-    setOptionSelected(true)
   }
 
   const handleViewChecklist = () => {
@@ -127,13 +142,14 @@ export default () => {
           setChecklistType={setChecklistType}
           optionSelected={optionSelected}
           handleNextQuestion={handleNextQuestion}
+          setRelevantQuestions={setRelevantQuestions}
         />
       )
     } else {
       return (
         <Question
-          question={designQuestions[question]}
-          handleSelection={handleSelection}
+          question={relevantQuestions[question]}
+          setOptionSelected={setOptionSelected}
           handleNextQuestion={handleNextQuestion}
           handlePreviousQuestion={handlePreviousQuestion}
           optionSelected={optionSelected}
@@ -142,7 +158,7 @@ export default () => {
     }
   }
 
-  if (question === designQuestions.length) {
+  if (question === relevantQuestions.length) {
     return (
       <>
         {!checklistComplete && (
