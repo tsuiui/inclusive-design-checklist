@@ -12,6 +12,10 @@
   flex-direction: column;
   align-items: flex-start;
 }
+#view-checklist {
+  justify-self: center;
+}
+
 .layout button {
   background-color: #004fbd;
   font-weight: 300;
@@ -19,6 +23,8 @@
   border-radius: 4px;
   border: none;
   padding: 8px 28px;
+  max-width: 250px;
+  max-height: 52px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s linear;

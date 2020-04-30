@@ -103,18 +103,6 @@ export default () => {
           handleNextQuestion={handleNextQuestion}
         />
       )
-    } else if (question === designQuestions.length) {
-      return (
-        <>
-          {!checklistComplete && (
-            <button onClick={() => handleViewChecklist()}>
-              View my checklist
-            </button>
-          )}
-          <ul id="checklist"></ul>
-          <button onClick={() => restartChecklist()}>Restart checklist</button>
-        </>
-      )
     } else {
       return (
         <Question
@@ -128,5 +116,27 @@ export default () => {
     }
   }
 
-  return <div className="checklist-container">{getCurrentQuestion()}</div>
+  if (question === designQuestions.length) {
+    return (
+      <>
+        {!checklistComplete && (
+          <>
+            <p>
+              Your checklist has been generated! To view click the button below.
+            </p>
+            <button id="view-checklist" onClick={() => handleViewChecklist()}>
+              View my checklist
+            </button>
+          </>
+        )}
+
+        <ul id="checklist"></ul>
+        {checklistComplete && (
+          <button onClick={() => restartChecklist()}>Restart checklist</button>
+        )}
+      </>
+    )
+  } else {
+    return <div className="checklist-container">{getCurrentQuestion()}</div>
+  }
 }
