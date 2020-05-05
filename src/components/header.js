@@ -1,10 +1,13 @@
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
   <header className="header">
-    <h1 className="header__title">{siteTitle}</h1>
+    <Link className="header__title" to="/">
+      <h1>{siteTitle}</h1>
+    </Link>
     <p>Version 0.0.1</p>
   </header>
 )
