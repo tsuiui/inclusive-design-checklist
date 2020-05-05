@@ -28,7 +28,7 @@ export default ({
   return (
     <>
       <h2 className="checklist__question">
-        Are you primarily a designer or a developer?
+        Do you want to check design or code accessibility?
       </h2>
       <div className="radio-container">
         <div className="radio-group">
@@ -39,7 +39,7 @@ export default ({
             value="design"
             onChange={() => handleInputEvent("design")}
           />
-          <label htmlFor="design">A designer</label>
+          <label htmlFor="design">Design</label>
         </div>
         <div className="radio-group">
           <input
@@ -49,7 +49,7 @@ export default ({
             value="development"
             onChange={() => handleInputEvent("development")}
           />
-          <label htmlFor="development">A developer</label>
+          <label htmlFor="development">Code</label>
         </div>
         <div className="radio-group">
           <input
@@ -59,7 +59,7 @@ export default ({
             value="combined"
             onChange={() => handleInputEvent("combination")}
           />
-          <label htmlFor="combined">I do both!</label>
+          <label htmlFor="combined">Why not both!</label>
         </div>
       </div>
       <div className="button-container">
@@ -69,6 +69,7 @@ export default ({
         >
           Next
         </button>
+        <button onClick={() => window.print()}>Print</button>
       </div>
     </>
   )

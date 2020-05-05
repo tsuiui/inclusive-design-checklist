@@ -19,7 +19,9 @@ export default ({
             value="yes"
             onChange={() => setOptionSelected(true)}
           />
-          <label htmlFor="yes">Yes</label>
+          <label tabindex="0" htmlFor="yes">
+            Yes
+          </label>
         </div>
         <div className="radio-group">
           <input
@@ -33,7 +35,12 @@ export default ({
         </div>
       </div>
       <div className="button-container">
-        <button onClick={() => handlePreviousQuestion()}>Back</button>
+        <button
+          className="button-back"
+          onClick={() => handlePreviousQuestion()}
+        >
+          Back
+        </button>
         <button disabled={!optionSelected} onClick={() => handleNextQuestion()}>
           Next
         </button>
