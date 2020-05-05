@@ -1,15 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import Progress from "./progress"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
-  <header className="header">
-    <Link className="header__title" to="/">
-      <h1>{siteTitle}</h1>
-    </Link>
-    <p>Version 0.0.1</p>
-  </header>
+  <>
+    <header className="header">
+      <Link className="header__title" to="/">
+        <h1>{siteTitle}</h1>
+      </Link>
+      <p>Version 0.0.1</p>
+      <Progress />
+    </header>
+  </>
 )
 
 Header.propTypes = {

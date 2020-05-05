@@ -1,0 +1,19 @@
+.progress {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.progress[value] {
+  appearance: none;
+  height: 4px;
+}
+
+.progress[value]::-webkit-progress-bar {
+  background: #e0e4ea;
+}
+
+.progress[value]::-webkit-progress-value {
+  background: #004fbd;
+}
