@@ -82,55 +82,7 @@ export const designQuestions = [
   },
 ]
 
-export const developmentQuestions = [
-  {
-    question: "Does your component have text?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["1.4.4"],
-    visited: false,
-  },
-  {
-    question:
-      "Does your component include any other interactive elements such as links, settings, input fields, etc.?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["2.4.7, 3.2.1, 3.2.2, 2.4.3"],
-    visited: false,
-  },
-  {
-    question: "Does your component include animated or moving content?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["2.2.2"],
-    visited: false,
-  },
-  {
-    question:
-      "Does your component include any time limits such as a countown timer?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["2.2.1"],
-    visited: false,
-  },
-  {
-    question: "Is your component intended for web?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["2.4.5"],
-    visited: false,
-  },
-  {
-    question:
-      "Does your component have repeated blocks of content such as navigation?",
-    answers: ["Yes", "No"],
-    addToChecklist: false,
-    guidelines: ["2.4.1"],
-    visited: false,
-  },
-]
-
-export const combinedQuestions = [
+export const fullQuestions = [
   {
     question: "Does your design include animated or moving content?",
     answers: ["Yes", "No"],

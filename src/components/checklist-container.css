@@ -1,13 +1,9 @@
-.checklist-container {
-  display: grid;
-  grid-template-rows: [question-row-start] 120px [question-row-end options-row-start] 100px [options-row-end];
-  grid-template-columns: [col-1-start] 600px [col-1-end];
-}
-
 .checklist__question {
   margin: 0;
-  grid-row: question-row-start / question-row-end;
-  grid-column: col-1-start / col-1-end;
+}
+
+.checklist__description {
+  margin: 12px 0 40px;
 }
 
 .layout button.button-back {
@@ -17,13 +13,10 @@
 }
 
 .radio-container {
-  grid-row: options-row-start / options-row-end;
-  grid-column: col-1-start / col-1-end;
+  max-width: 600px;
 }
 
 .button-container {
-  position: fixed;
-  bottom: 20vh;
   display: flex;
   justify-content: flex-end;
   width: 600px;

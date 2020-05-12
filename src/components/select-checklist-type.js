@@ -1,35 +1,32 @@
 import React from "react"
-import {
-  designQuestions,
-  developmentQuestions,
-  combinedQuestions,
-} from "../data/questions"
+import { designQuestions, fullQuestions } from "../data/questions"
 
 import "./checklist-container.css"
 
-export default ({
-  setChecklistType,
+export const SelectChecklistType = ({
+  setChecklistQuestions,
   setOptionSelected,
   handleNextQuestion,
   optionSelected,
   setRelevantQuestions,
 }) => {
   const handleInputEvent = checklistType => {
-    setChecklistType(checklistType)
     if (checklistType === "design") {
-      setRelevantQuestions(designQuestions)
-    } else if (checklistType === "development") {
-      setRelevantQuestions(developmentQuestions)
+      setChecklistQuestions(designQuestions)
     } else {
-      setRelevantQuestions(combinedQuestions)
+      setChecklistQuestions(fullQuestions)
     }
     setOptionSelected(true)
   }
   return (
     <>
       <h2 className="checklist__question">
-        Do you want to check design or code accessibility?
+        Do you want to complete a UX design audit or a full accessibility audit?
       </h2>
+      <p className="checklist__description">
+        A full accessibility audit includes code whereas a UX design audit only
+        includes design mockup guidelines.
+      </p>
       <div className="radio-container">
         <div className="radio-group">
           <input
@@ -39,37 +36,18 @@ export default ({
             value="design"
             onChange={() => handleInputEvent("design")}
           />
-          <label htmlFor="design">Design</label>
+          <label htmlFor="design">UX Design Audit</label>
         </div>
         <div className="radio-group">
           <input
             type="radio"
-            id="development"
+            id="full"
             name="checklist-type"
-            value="development"
-            onChange={() => handleInputEvent("development")}
+            value="full"
+            onChange={() => handleInputEvent("full")}
           />
-          <label htmlFor="development">Code</label>
+          <label htmlFor="full">Full Audit</label>
         </div>
-        <div className="radio-group">
-          <input
-            type="radio"
-            id="combined"
-            name="checklist-type"
-            value="combined"
-            onChange={() => handleInputEvent("combination")}
-          />
-          <label htmlFor="combined">Why not both!</label>
-        </div>
-      </div>
-      <div className="button-container">
-        <button
-          disabled={!optionSelected}
-          onClick={() => handleNextQuestion(true)}
-        >
-          Next
-        </button>
-        <button onClick={() => window.print()}>Print</button>
       </div>
     </>
   )
