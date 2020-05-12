@@ -89,15 +89,27 @@ const ChecklistPage = () => {
     return (
       <Layout>
         <Progress progress={progress} />
+        <button className="button--print" onClick={() => window.print()}>
+          Print
+        </button>
         {checklistGuidelines.map(guideline => {
           let { link, title, goal, solution } = guidelines[guideline]
           return (
             <div className="checklist-item-wrapper">
-              <h1>{title}</h1>
-              <h2>Goal</h2>
+              <div className="checklist-title-wrapper">
+                <label class="container">
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <h1>{title}</h1>
+              </div>
+              <h2 className="checklist-goal">Goal</h2>
               <p>{goal}</p>
               <h2>Solution</h2>
               <p>{solution}</p>
+              <a href={link} className="guideline-badge" target="_blank">
+                Guideline {guideline} - {title}
+              </a>
             </div>
           )
         })}
