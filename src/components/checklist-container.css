@@ -133,6 +133,11 @@ input[type="radio"]:checked + label {
 .checklist-title-wrapper {
   border-bottom: 2px solid #e0e4ea;
   display: flex;
+  align-items: center;
+}
+
+.checklist-title-wrapper > h1 {
+  margin: 0 0 12px;
 }
 
 .checklist-item-wrapper {
@@ -162,6 +167,7 @@ input[type="radio"]:checked + label {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  align-self: flex-start;
 }
 
 /* Hide the browser's default checkbox */
@@ -221,4 +227,40 @@ input[type="radio"]:checked + label {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/*
+  Impact scores
+*/
+.impact {
+  font-size: 14px;
+  font-weight: bold;
+  color: #25282d;
+  border: none;
+  border-radius: 50px;
+  padding: 0 12px;
+  max-width: 78px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  margin-left: auto;
+}
+
+.impact--minor {
+  background: #ffffff;
+}
+
+.impact--moderate {
+  background: #008858;
+  color: #ffffff;
+}
+
+.impact--major {
+  background: #ffcb00;
+}
+
+.impact--critical {
+  background: #e02d52;
+  color: #ffffff;
 }

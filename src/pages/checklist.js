@@ -94,7 +94,7 @@ const ChecklistPage = () => {
           Print
         </button>
         {checklistGuidelines.map(guideline => {
-          let { link, title, goal, solution } = guidelines[guideline]
+          let { link, title, goal, solution, impact } = guidelines[guideline]
           return (
             <div className="checklist-item-wrapper">
               <div className="checklist-title-wrapper">
@@ -103,6 +103,9 @@ const ChecklistPage = () => {
                   <span class="checkmark"></span>
                 </label>
                 <h1>{title}</h1>
+                <div className={`impact impact--${impact.toLowerCase()}`}>
+                  {impact}
+                </div>
               </div>
               <h2 className="checklist-goal">Goal</h2>
               <p>{goal}</p>

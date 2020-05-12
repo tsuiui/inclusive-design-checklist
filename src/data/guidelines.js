@@ -2,6 +2,7 @@ const guidelines = {
   "2.2.2": {
     link: "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html",
     title: "Pause, Stop, Hide",
+    impact: "Critical",
     goal:
       "The goal of this principle is to avoid distracting users during their interaction with a Web page. 'Moving, blinking and scrolling' refers to content in which the visible content conveys a sense of motion. Common examples include motion pictures, synchronized media presentations, animations, real-time games, and scrolling stock tickers.",
     solution:
@@ -10,6 +11,7 @@ const guidelines = {
   "1.1.1": {
     link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html",
     title: "Non-Text Content",
+    impact: "Critical",
     goal:
       "The goal of this principle is to make information conveyed through non-text content accessible through the use of a text alternative. Text alternatives are a primary way for making information accessible because they can be rendered through visual, auditory or tactile methods to match the needs of the user.",
     solution:
@@ -19,6 +21,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html",
     title: "Focus Order",
+    impact: "Moderate",
     goal:
       "The goal of this principle is to ensure that when users navigate sequentially through content, they encounter information in meaningful way through use of the keyboard. This reduces confusion by letting users form a consistent mental model of the content.",
     solution:
@@ -28,6 +31,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html",
     title: "Link Purpose",
+    impact: "Moderate",
     goal:
       "The goal of this principle is to help users understand the purpose of each link so they can decide whether they want to follow the link. Whenever possible, provide link text that identifies the purpose of the link without needing additional context.",
     solution:
@@ -38,6 +42,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-receive-focus.html",
     title: "Consistent Behavior Receive Focus",
+    impact: "Major",
     goal:
       "The goal of this principle is to ensure that functionality is predictable as visitors navigate their way through a document.",
     solution:
@@ -47,6 +52,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html",
     title: "On Input",
+    impact: "Moderate",
     goal:
       "The goal of this principle is to ensure that entering data or selecting a form control has predictable effects.",
     solution:
@@ -57,6 +63,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html",
     title: "Focus Visible",
+    impact: "Major",
     goal:
       "The goal of this principle is to help a person know which element has the keyboard focus.",
     solution:
@@ -66,6 +73,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-identified.html",
     title: "Error Identification",
+    impact: "Major",
     goal:
       "The goal of this principle is to ensure that users are aware that an error has occurred and can determine what is wrong. The error message should be as specific as possible.",
     solution:
@@ -74,6 +82,7 @@ const guidelines = {
   "3.3.2": {
     link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html",
     title: "Labels Or Instructions",
+    impact: "Major",
     goal:
       "The goal of this principle is to have content authors place instructions or labels that identify the controls in a form so that users know what input data is expected. Instructions or labels may also specify data formats for fields especially if they are out of the customary formats or if there are specific rules for correct input.",
     solution:
@@ -83,6 +92,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-suggestions.html",
     title: "Error Suggestion",
+    impact: "Moderate",
     goal:
       "The goal of this principle is to ensure that users receive appropriate suggestions for correction of an input error if it is possible.",
     solution:
@@ -92,6 +102,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-reversible.html",
     title: "Error Prevention (Legal, Financial, Data)",
+    impact: "Critical",
     goal:
       "The goal of this principle is to help users with disabilities avoid serious consequences as the result of a mistake when performing an action that cannot be reversed. For example, purchasing non-refundable airline tickets or submitting an order to purchase stock in a brokerage account are financial transactions with serious consequences.",
     solution:
@@ -101,6 +112,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html",
     title: "Contrast",
+    impact: "Major",
     goal:
       "The goal of this principle is to provide enough contrast between text and its background so that it can be read by people with moderately low vision (who do not use contrast-enhancing assistive technology). ",
     solution:
@@ -110,6 +122,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html",
     title: "Resize Text",
+    impact: "Major",
     goal:
       "The goal of this principle is to ensure that visually rendered text, including text-based controls (text characters that have been displayed so that they can be seen [vs. text characters that are still in data form such as ASCII]) can be scaled successfully so that it can be read directly by people with mild visual disabilities, without requiring the use of assistive technology such as a screen magnifier.",
     solution:
@@ -119,6 +132,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html",
     title: "Images Of Text",
+    impact: "Major",
     goal:
       "The goal of this principle is to encourage authors, who are using technologies which are capable of achieving their desired default visual presentation, to enable people who require a particular visual presentation of text to be able to adjust the text presentation as needed. This includes people who require the text in a particular font size, foreground and background color, font family, line spacing or alignment.",
     solution:
@@ -128,6 +142,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html",
     title: "Timing Adjustable",
+    impact: "Critical",
     goal:
       "The goal of this principle is to ensure that users with disabilities are given adequate time to interact with Web content whenever possible. People with disabilities such as blindness, low vision, dexterity impairments, and cognitive limitations may require more time to read content or to perform functions such as filling out on-line forms.",
     solution:
@@ -137,6 +152,7 @@ const guidelines = {
     link:
       "https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded.html",
     title: "Audio-Only & Video-Only (Pre-Recorded)",
+    impact: "Critical",
     goal:
       "The goal of this principle is to make information conveyed by prerecorded audio-only and prerecorded video-only content available to all users. ",
     solution:
@@ -146,6 +162,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html",
     title: "Captions (Pre-Recorded)",
+    impact: "Critical",
     goal:
       "The goal of this principle is to enable people who are deaf or hard of hearing to watch synchronized media presentations.",
     solution:
@@ -155,6 +172,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-audio-desc.html",
     title: "Audio Description Or Media Alternative (Pre-Recorded)",
+    impact: "Major",
     goal:
       "The goal of this principle is to provide people who are blind or visually impaired access to the visual information in a synchronized media presentation.",
     solution:
@@ -164,6 +182,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-real-time-captions.html",
     title: "Captions (Live)",
+    impact: "Critical",
     goal:
       "The goal of this principle is to enable people who are deaf or hard of hearing to watch real-time presentations.",
     solution:
@@ -173,6 +192,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-audio-desc-only.html",
     title: "Audio Descriptions (Pre-Recorded)",
+    impact: "Major",
     goal:
       "The goal of this principle is to provide people who are blind or visually impaired access to the visual information in a synchronized media presentation.",
     solution:
@@ -182,6 +202,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-dis-audio.html",
     title: "Audio Control",
+    impact: "Critical",
     goal:
       "Individuals who use screen reading software can find it hard to hear the speech output if there is other audio playing at the same time. This difficulty is exacerbated when the screen reader's speech output is software based (as most are today) and is controlled via the same volume control as the sound. Therefore, it is important that the user be able to turn off the background sound. Note: Having control of the volume includes being able to reduce its volume to zero.",
     solution:
@@ -191,6 +212,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html",
     title: "Multiple Ways",
+    impact: "Moderate",
     goal:
       "The goal of this principle is to make it possible for users to locate content in a manner that best meets their needs. Users may find one technique easier or more comprehensible to use than another.",
     solution:
@@ -200,6 +222,7 @@ const guidelines = {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html",
     title: "Bypass Blocks",
+    impact: "Minor",
     goal:
       "The goal of this principle is to allow people who navigate sequentially through content more direct access to the primary content of the Web page.",
     solution:
