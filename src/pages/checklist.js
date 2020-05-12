@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { SelectChecklistType, Layout, Progress } from "../components"
+import newPage from "../images/new-page.svg"
 import guidelines from "../data/guidelines"
 
 const ChecklistPage = () => {
@@ -108,6 +109,13 @@ const ChecklistPage = () => {
               <h2>Solution</h2>
               <p>{solution}</p>
               <a href={link} className="guideline-badge" target="_blank">
+                <span className="guideline-badge-icon">
+                  <img
+                    src={newPage}
+                    aria-hidden="true"
+                    alt="Open guideline in a new page"
+                  />
+                </span>
                 Guideline {guideline} - {title}
               </a>
             </div>

@@ -12,6 +12,23 @@
   color: #004fbd;
 }
 
+.guideline-badge-icon {
+  background: #004fbd;
+  width: 28px;
+  height: 28px;
+  border-radius: 50px;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guideline-badge-icon > img {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+}
+
 .layout button.button--print {
   font-size: 12px;
   height: 28px;
@@ -30,7 +47,7 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  height: 32px;
+  height: 52px;
   padding: 0 8px;
   border-radius: 4px;
   display: flex;
