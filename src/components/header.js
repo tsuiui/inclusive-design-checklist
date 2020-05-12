@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import Progress from "./progress"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
@@ -11,7 +10,6 @@ const Header = ({ siteTitle }) => (
         <h1>{siteTitle}</h1>
       </Link>
       <p>Version 0.0.1</p>
-      <Progress />
     </header>
   </>
 )

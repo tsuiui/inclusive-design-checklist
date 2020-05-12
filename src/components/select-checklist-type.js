@@ -8,7 +8,6 @@ export const SelectChecklistType = ({
   setOptionSelected,
   handleNextQuestion,
   optionSelected,
-  setRelevantQuestions,
 }) => {
   const handleInputEvent = checklistType => {
     if (checklistType === "design") {
@@ -35,6 +34,7 @@ export const SelectChecklistType = ({
             name="checklist-type"
             value="design"
             onChange={() => handleInputEvent("design")}
+            tabIndex="0"
           />
           <label htmlFor="design">UX Design Audit</label>
         </div>
