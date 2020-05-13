@@ -17,12 +17,14 @@ const ChecklistPage = () => {
       return
     }
     const guidelineSelected = document.querySelector("#yes").checked
+    // Add guideline to the list of guidelines
     if (guidelineSelected) {
       const guidelines = checklistQuestions[currentQuestionIndex].guidelines
 
       checklistQuestions[currentQuestionIndex].addToChecklist = true
       setChecklistGuidelines([...checklistGuidelines, ...guidelines])
     } else {
+      // Remove the guideline if it was previously selected but is no longer
       const guidelines = checklistQuestions[currentQuestionIndex].guidelines
       if (checklistGuidelines.includes(guidelines[0])) {
         const filteredGuidelines = checklistGuidelines.filter(
@@ -35,6 +37,7 @@ const ChecklistPage = () => {
     if (currentQuestionIndex + 1 < checklistQuestions.length) {
       if (checklistQuestions[currentQuestionIndex + 1].visited === true) {
         if (
+          // If the question was previously selected, set that value
           checklistQuestions[currentQuestionIndex + 1].addToChecklist === true
         ) {
           document.querySelector("#yes").checked = true
@@ -43,13 +46,17 @@ const ChecklistPage = () => {
         }
         setOptionSelected(true)
       } else {
+        // Reset the options to be unselected
         document.querySelector("#yes").checked = false
         document.querySelector("#no").checked = false
         setOptionSelected(false)
       }
     }
     checklistQuestions[currentQuestionIndex].visited = true
-    setProgress((currentQuestionIndex / checklistQuestions.length) * 100)
+
+    setProgress(
+      Math.floor(((currentQuestionIndex + 1) / checklistQuestions.length) * 100)
+    )
     setCurrentQuestionIndex(currentQuestionIndex + 1)
   }
 
@@ -64,7 +71,9 @@ const ChecklistPage = () => {
       }
       setOptionSelected(true)
     }
-    setProgress((currentQuestionIndex / checklistQuestions.length) * 100)
+    setProgress(
+      Math.floor(((currentQuestionIndex - 1) / checklistQuestions.length) * 100)
+    )
     setCurrentQuestionIndex(currentQuestionIndex - 1)
   }
 
@@ -86,7 +95,7 @@ const ChecklistPage = () => {
         </div>
       </Layout>
     )
-  } else if (currentQuestionIndex === checklistQuestions.length - 1) {
+  } else if (currentQuestionIndex === checklistQuestions.length) {
     return (
       <Layout>
         <Progress progress={progress} />
@@ -96,11 +105,11 @@ const ChecklistPage = () => {
         {checklistGuidelines.map(guideline => {
           let { link, title, goal, solution, impact } = guidelines[guideline]
           return (
-            <div className="checklist-item-wrapper">
+            <div className="checklist-item-wrapper" key={link}>
               <div className="checklist-title-wrapper">
-                <label class="container">
+                <label className="container">
                   <input type="checkbox" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <h1>{title}</h1>
                 <div className={`impact impact--${impact.toLowerCase()}`}>
