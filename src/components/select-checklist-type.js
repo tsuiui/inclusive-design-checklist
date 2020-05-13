@@ -1,5 +1,9 @@
 import React from "react"
 import { designQuestions, fullQuestions } from "../data/questions"
+import {
+  generalDesignGuidelineIds,
+  generalDevelopmentGuidelineIds,
+} from "../data/guidelines"
 
 import "./checklist-container.css"
 
@@ -8,12 +12,18 @@ export const SelectChecklistType = ({
   setOptionSelected,
   handleNextQuestion,
   optionSelected,
+  setChecklistGuidelines,
 }) => {
   const handleInputEvent = checklistType => {
     if (checklistType === "design") {
       setChecklistQuestions(designQuestions)
+      setChecklistGuidelines([...generalDesignGuidelineIds])
     } else {
       setChecklistQuestions(fullQuestions)
+      setChecklistGuidelines([
+        ...generalDesignGuidelineIds,
+        ...generalDevelopmentGuidelineIds,
+      ])
     }
     setOptionSelected(true)
   }

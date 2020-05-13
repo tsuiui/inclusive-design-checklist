@@ -1,4 +1,4 @@
-const guidelines = {
+export const guidelines = {
   "2.2.2": {
     link: "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html",
     title: "Pause, Stop, Hide",
@@ -7,6 +7,16 @@ const guidelines = {
       "The goal of this principle is to avoid distracting users during their interaction with a Web page. 'Moving, blinking and scrolling' refers to content in which the visible content conveys a sense of motion. Common examples include motion pictures, synchronized media presentations, animations, real-time games, and scrolling stock tickers.",
     solution:
       "For any moving, blinking or scrolling information that starts automatically, lasts more than five seconds, and is presented in parallel with other content, there is a way for the user to pause, stop, or hide the content unless the movement, blinking, or scrolling is part of an essential activity. For any auto-updating information that starts automatically and is presented in parallel with other content, there is a way for the user to pause, stop, or hide it or to control the frequency of the update unless the auto-updating is part of an essential activity. ",
+  },
+  "3.2.3": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-consistent-locations.html",
+    title: "Consistent Navigation",
+    impact: "2",
+    goal:
+      "The goal of this principle is to encourage the use of consistent presentation and layout for users who interact with repeated content within a set of Web pages and need to locate specific information or functionality more than once.",
+    solution:
+      "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
   },
   "1.1.1": {
     link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html",
@@ -228,6 +238,56 @@ const guidelines = {
     solution:
       "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
   },
+  "1.3.3": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-understanding.html",
+    title: "Sensory Characteristics",
+    impact: "2",
+    goal:
+      "The goal of this principle is to ensure that all users can access instructions for using the content, even when they cannot perceive shape or size or use information about spatial location or orientation. ",
+    solution:
+      " Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+  },
+  "1.4.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html",
+    title: "Use Of Color",
+    impact: "4",
+    goal:
+      "The goal of this principle is to ensure that all users can access information that is conveyed by color differences, that is, by the use of color where each color has a meaning assigned to it.",
+    solution:
+      "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+  },
+  "2.4.6": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html",
+    title: "Headings And Labels",
+    impact: "2",
+    goal:
+      "The goal of this principle is to help users understand what information is contained in Web pages and how that information is organized.",
+    solution: "Headings and labels describe topic or purpose.",
+  },
+  "3.2.4": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-consistent-functionality.html",
+    title: "Consistent Identification",
+    impact: "2",
+    goal:
+      "The goal of this principle is to ensure consistent identification of functional components that appear repeatedly within a set of Web pages.",
+    solution:
+      "Components that have the same functionality within a set of Web pages are identified consistently.",
+  },
 }
 
-export default guidelines
+export const generalDesignGuidelineIds = ["1.3.3", "1.4.1", "2.4.6", "3.2.4"]
+export const generalDevelopmentGuidelineIds = [
+  "1.3.1",
+  "1.3.2",
+  "2.1.1",
+  "2.1.2",
+  "2.3.1",
+  "3.1.1",
+  "3.1.2",
+  "4.1.1",
+  "4.1.2",
+]
