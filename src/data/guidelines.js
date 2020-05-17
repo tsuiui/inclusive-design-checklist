@@ -3,49 +3,53 @@ export const guidelines = {
     link: "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html",
     title: "Pause, Stop, Hide",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to avoid distracting users during their interaction with a Web page. 'Moving, blinking and scrolling' refers to content in which the visible content conveys a sense of motion. Common examples include motion pictures, synchronized media presentations, animations, real-time games, and scrolling stock tickers.",
+      "Some users may struggle with web page distractions and as such we must take measures to reduce moving, blinking, or scrolling content.",
     solution:
-      "For any moving, blinking or scrolling information that starts automatically, lasts more than five seconds, and is presented in parallel with other content, there is a way for the user to pause, stop, or hide the content unless the movement, blinking, or scrolling is part of an essential activity. For any auto-updating information that starts automatically and is presented in parallel with other content, there is a way for the user to pause, stop, or hide it or to control the frequency of the update unless the auto-updating is part of an essential activity. ",
+      "Any moving, blinking, or scrolling content in our user interfaces must provide a method for the user to pause, stop, or hide the content. If the movement is vital to the component we can provide a way for our users to alter the frequency of motion.",
   },
   "3.2.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-consistent-locations.html",
     title: "Consistent Navigation",
-    impact: "2",
+    impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to encourage the use of consistent presentation and layout for users who interact with repeated content within a set of Web pages and need to locate specific information or functionality more than once.",
+      "We should present our content in a consistent and recognizable manner. Many users rely on the familiarity of our user interfaces and as such we must be cognizant to display layouts and components consistency.",
     solution:
-      "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+      "When using navigation within our web pages we must preserve the order of navigation unless the user explicitly alters the layout.",
   },
   "1.1.1": {
     link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html",
     title: "Non-Text Content",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to make information conveyed through non-text content accessible through the use of a text alternative. Text alternatives are a primary way for making information accessible because they can be rendered through visual, auditory or tactile methods to match the needs of the user.",
+      "Occasionally we must present information in a non-textual manner, but this poses a problem to users navigating your site with an assistive technology or with visual impairments. Many users rely on text alternatives for images and other non-textual content. These text alternatives can subsequently be presented to users through visual, tactile, or auditory manners.",
     solution:
-      " If non-text content is a control or accepts user input, then it has a name that describes its purpose.  If non-text content is time-based media, then text alternatives at least provide descriptive identification of the non-text content. If non-text content is a test or exercise that would be invalid if presented in text, then text alternatives at least provide descriptive identification of the non-text content.  If non-text content is primarily intended to create a specific sensory experience, then text alternatives at least provide descriptive identification of the non-text content. If the purpose of non-text content is to confirm that content is being accessed by a person rather than a computer, then text alternatives that identify and describe the purpose of the non-text content are provided, and alternative forms of CAPTCHA using output modes for different types of sensory perception are provided to accommodate different disabilities. If non-text content is pure decoration, is used only for visual formatting, or is not presented to users, then it is implemented in a way that it can be ignored by assistive technology.",
+      "Any non-textual element or component which requires user input or interaction must contain a text alternative describing the element or component's purpose.",
   },
   "2.4.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html",
     title: "Focus Order",
     impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to ensure that when users navigate sequentially through content, they encounter information in meaningful way through use of the keyboard. This reduces confusion by letting users form a consistent mental model of the content.",
+      "Many users rely on keyboards to navigate web pages so we must present our content in a logical order. As the user navigates through our application with a keyboard, the path must be sequential.",
     solution:
-      "If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+      "Any component or element which captures keyboard focus  must capture this focus in a logical order within the webpage focus sequence.",
   },
   "2.4.4": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html",
     title: "Link Purpose",
     impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to help users understand the purpose of each link so they can decide whether they want to follow the link. Whenever possible, provide link text that identifies the purpose of the link without needing additional context.",
-    solution:
-      "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.",
+      "Clicking a link and navigating to another part of a website or a completely new website can be distracting to our users. As a result, users should be able to discern the purpose of all links in our applications. This allows them to quickly decide whether to follow the link, preventing unnecessary distractions.",
+    solution: "Each link text should clearly indicate its purpose.",
   },
 
   "3.2.1": {
@@ -53,20 +57,22 @@ export const guidelines = {
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-receive-focus.html",
     title: "Consistent Behavior Receive Focus",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to ensure that functionality is predictable as visitors navigate their way through a document.",
+      "The focus order of our components should be presented in a logical manner.",
     solution:
-      "When any component receives focus, it does not initiate a change of context.",
+      "A component which receives focus should not break our users' concentration by changing contexts.",
   },
   "3.2.2": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html",
     title: "On Input",
     impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to ensure that entering data or selecting a form control has predictable effects.",
+      "When entering data or interacting with a form element, the element behaves expectedly.",
     solution:
-      "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+      "We shouldn't change the default or expected behavior of form components unless our users have been explicitly notified that the application context will change.",
   },
 
   "2.4.7": {
@@ -74,208 +80,326 @@ export const guidelines = {
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html",
     title: "Focus Visible",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to help a person know which element has the keyboard focus.",
+      "Users should quickly and easily be able to recognize where the keyboard focus is within a user interface.",
     solution:
-      "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+      "Any focusable element within a web page can be easily discerned.",
   },
   "3.3.1": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-identified.html",
     title: "Error Identification",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to ensure that users are aware that an error has occurred and can determine what is wrong. The error message should be as specific as possible.",
+      "Users should be clearly informed that an error has occurred and be able to determine what went wrong.",
     solution:
-      "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+      "Any form elements which allow user input and require a particular format or entry type should have clearly defined error messages when an error arises.",
   },
   "3.3.2": {
     link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html",
     title: "Labels Or Instructions",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to have content authors place instructions or labels that identify the controls in a form so that users know what input data is expected. Instructions or labels may also specify data formats for fields especially if they are out of the customary formats or if there are specific rules for correct input.",
+      "Form elements should contain clear labels or instructions which indicate the expected input type or format.",
     solution:
-      "Labels or instructions are provided when content requires user input.",
+      "Form elements requiring a specific data format or types should be clearly communicated through labels or instructions.",
   },
   "3.3.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-suggestions.html",
     title: "Error Suggestion",
     impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to ensure that users receive appropriate suggestions for correction of an input error if it is possible.",
+      "If our users incorrectly enter data into a form field we must provide clear instructions on how to fix said issue.",
     solution:
-      "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content. ",
+      "Clear instructions are presented to the user when incorrect form data is entered.",
   },
   "3.3.4": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-reversible.html",
     title: "Error Prevention (Legal, Financial, Data)",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to help users with disabilities avoid serious consequences as the result of a mistake when performing an action that cannot be reversed. For example, purchasing non-refundable airline tickets or submitting an order to purchase stock in a brokerage account are financial transactions with serious consequences.",
+      "When completing legal, financial, or other important forms we must ensure our users avoid serious consequences of incorrectly entering data.",
     solution:
-      "For Web pages that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, at least one of the following is true: Submissions are reversible, data entered by the user is checked for input errors and the user is provided an opportunity to correct them, or a mechanism is available for reviewing, confirming, and correcting information before finalizing the submission.",
+      "When building legal forms, forms which complete financial transactions, or forms which carry out irreversible actions like deleting a user from a database, we must take preventative or reversible measures. For example, we can allow users to reverse their action or validate their data prior to submission.",
   },
   "1.4.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html",
     title: "Contrast",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to provide enough contrast between text and its background so that it can be read by people with moderately low vision (who do not use contrast-enhancing assistive technology). ",
+      "Text must be easily discernible against its background color so it can be read by users with low vision.",
     solution:
-      "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: large-scale text and images of large-scale text have a contrast ratio of at least 3:1, text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement, and text that is part of a logo or brand name has no minimum contrast requirement.",
+      "Text and images must have a contrast ratio of at least 4.5:1 with the exception of large-scale text and images of large scale-text which can have a contrast ratio of 3:1.",
   },
   "1.4.4": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html",
     title: "Resize Text",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to ensure that visually rendered text, including text-based controls (text characters that have been displayed so that they can be seen [vs. text characters that are still in data form such as ASCII]) can be scaled successfully so that it can be read directly by people with mild visual disabilities, without requiring the use of assistive technology such as a screen magnifier.",
+      "Text and text-based controls must be resizable for users with visual disabilities.",
     solution:
-      "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+      "With the exception of captions and images of text, all text can be resized up to 200 percent, without the use of assistive technology, while preserving content and functionality.",
   },
   "1.4.5": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html",
     title: "Images Of Text",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to encourage authors, who are using technologies which are capable of achieving their desired default visual presentation, to enable people who require a particular visual presentation of text to be able to adjust the text presentation as needed. This includes people who require the text in a particular font size, foreground and background color, font family, line spacing or alignment.",
+      "Users must be able to adjust the visual appearance of textual content including size, color, and font family.",
     solution:
-      "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following: the image of text can be visually customized to the user's requirements, or a particular presentation of text is essential to the information being conveyed.",
+      "Use text in lieu of images of text so the user can customize the visual appearance of the content.",
   },
   "2.2.1": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html",
     title: "Timing Adjustable",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to ensure that users with disabilities are given adequate time to interact with Web content whenever possible. People with disabilities such as blindness, low vision, dexterity impairments, and cognitive limitations may require more time to read content or to perform functions such as filling out on-line forms.",
+      "If your application relies on timed content, users must be given adequate time to complete the task.",
     solution:
-      "For each time limit that is set by the content, at least one of the following is true: the user is allowed to turn off the time limit before encountering it, the user is allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting, the user is warned before time expires and given at least 20 seconds to extend the time limit with a simple action, and the user is allowed to extend the time limit at least ten times, the time limit is a required part of a real-time event (for example, an auction), and no alternative to the time limit is possible, the time limit is essential and extending it would invalidate the activity, or the time limit is longer than 20 hours.",
+      "Users must be allowed to disable or adjust the time limit and are warned before the time expires.",
   },
   "1.2.1": {
     link:
       "https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded.html",
     title: "Audio-Only & Video-Only (Pre-Recorded)",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to make information conveyed by prerecorded audio-only and prerecorded video-only content available to all users. ",
+      "Pre-recorded audio-only and visual-only content must be digestible by all users.",
     solution:
-      "For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such: an alternative for time-based media is provided that presents equivalent information for prerecorded audio-only content or either an alternative for time-based media or an audio track is provided that presents equivalent information for prerecorded video-only content.",
+      "Alternatives must be provided for audio-only and video-only content.",
   },
   "1.2.2": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html",
     title: "Captions (Pre-Recorded)",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to enable people who are deaf or hard of hearing to watch synchronized media presentations.",
+      "Deaf and hard-of-hearing users may not be able to consume audio content so we must provide textual alternatives.",
     solution:
-      "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+      "All pre-recorded audio content in synchronized media include captions.",
   },
   "1.2.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-audio-desc.html",
     title: "Audio Description Or Media Alternative (Pre-Recorded)",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to provide people who are blind or visually impaired access to the visual information in a synchronized media presentation.",
+      "Blind or visually impaired users are not able to consume video content, so we must provide an audio alternative.",
     solution:
-      "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+      "All pre-recorded video content in synchronized media must provide alternative methods of consumption or audio descriptions.",
   },
   "1.2.4": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-real-time-captions.html",
     title: "Captions (Live)",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "The goal of this principle is to enable people who are deaf or hard of hearing to watch real-time presentations.",
-    solution:
-      "Captions are provided for all live audio content in synchronized media.",
+      "Deaf or hearing-impaired users must be able to consume real-time presentations.",
+    solution: "Live audio content in synchronized media must include captions.",
   },
   "1.2.5": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-audio-desc-only.html",
     title: "Audio Descriptions (Pre-Recorded)",
     impact: "Major",
+    impactScore: 3,
     goal:
-      "The goal of this principle is to provide people who are blind or visually impaired access to the visual information in a synchronized media presentation.",
-    solution:
-      "Audio description is provided for all prerecorded video content in synchronized media.",
+      "Blind or visually-impaired users must be able to consume recorded presentations",
+    solution: "Pre-recorded video content must contain audio descriptions.",
   },
   "1.4.2": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-dis-audio.html",
     title: "Audio Control",
     impact: "Critical",
+    impactScore: 4,
     goal:
-      "Individuals who use screen reading software can find it hard to hear the speech output if there is other audio playing at the same time. This difficulty is exacerbated when the screen reader's speech output is software based (as most are today) and is controlled via the same volume control as the sound. Therefore, it is important that the user be able to turn off the background sound. Note: Having control of the volume includes being able to reduce its volume to zero.",
+      "Users must be able to control and turn off background sounds in your applications.",
     solution:
-      " If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+      "If your application contains audio and plays for longer than three seconds, you must either provide a way to pause or stop the audio or provide a method for controlling the audio volume independently from their system volume.",
   },
   "2.4.5": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html",
     title: "Multiple Ways",
     impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to make it possible for users to locate content in a manner that best meets their needs. Users may find one technique easier or more comprehensible to use than another.",
+      "Users must be able to locate content in the way that best suits their needs.",
     solution:
-      "More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.",
+      "Multiple paths are possible to locate a web page within a web application.",
+  },
+  "2.4.2": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title",
+    title: "Page Titled",
+    impact: "Moderate",
+    impactScore: 2,
+    goal:
+      "Web pages must have descriptive titles so users can easily find the content they're looking for.",
+    solution: " Each web page should have a descriptive title.",
   },
   "2.4.1": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html",
     title: "Bypass Blocks",
     impact: "Minor",
+    impactScore: 1,
     goal:
-      "The goal of this principle is to allow people who navigate sequentially through content more direct access to the primary content of the Web page.",
+      "Users must be able to navigate through a web page to access the primary content.",
     solution:
-      "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+      "Bypass blocks must be implemented which allow users to skip to the primary content.",
   },
   "1.3.3": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-understanding.html",
     title: "Sensory Characteristics",
-    impact: "2",
+    impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to ensure that all users can access instructions for using the content, even when they cannot perceive shape or size or use information about spatial location or orientation. ",
+      "All users must be able to access content instructions regardless of their ability to perceive shape and size of information.",
     solution:
-      " Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+      "Instructions do not solely rely on shape, size, visual location, orientation, or sound.",
   },
   "1.4.1": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html",
     title: "Use Of Color",
-    impact: "4",
-    goal:
-      "The goal of this principle is to ensure that all users can access information that is conveyed by color differences, that is, by the use of color where each color has a meaning assigned to it.",
+    impact: "Critical",
+    impactScore: 4,
+    goal: "Users should be able to access all content which relies upon color.",
     solution:
-      "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+      "Content which relies upon color can be discerned by alternate means like text labels.",
   },
   "2.4.6": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html",
     title: "Headings And Labels",
-    impact: "2",
-    goal:
-      "The goal of this principle is to help users understand what information is contained in Web pages and how that information is organized.",
-    solution: "Headings and labels describe topic or purpose.",
+    impact: "Moderate",
+    impactScore: 2,
+    goal: "Users should understand the information contained in the web page.",
+    solution:
+      "Headings and labels should be used to outline the page structure.",
   },
   "3.2.4": {
     link:
       "https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-consistent-functionality.html",
     title: "Consistent Identification",
-    impact: "2",
+    impact: "Moderate",
+    impactScore: 2,
     goal:
-      "The goal of this principle is to ensure consistent identification of functional components that appear repeatedly within a set of Web pages.",
+      "When using the same component across web pages, components should be consistently identified.",
     solution:
-      "Components that have the same functionality within a set of Web pages are identified consistently.",
+      "Components with the same functionality or purpose should be consistently identified.",
+  },
+  "1.3.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
+    title: "Info and Relationships",
+    impact: "Major",
+    impactScore: 3,
+    goal:
+      "When the format presentation of content changes, the information and relationships implied by visual or auditory formatting should persist.",
+    solution:
+      "The information, structure, and relationships presented can be programmatically determined.",
+  },
+  "1.3.2": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-sequence.html",
+    title: "Meaningful Sequence",
+    impact: "Moderate",
+    impactScore: 2,
+    goal:
+      "User agents can provide an alternate content structure while preserving the order of content.",
+    solution:
+      "If content structure is meaningful, a logical reading structure can be programmatically determined.",
+  },
+  "2.1.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html",
+    title: "Keyboard",
+    impact: "Critical",
+    impactScore: 4,
+    goal: "Content must be keyboard navigable, where applicable.",
+    solution:
+      "Content which allows user interaction can be navigated with a keyboard.",
+  },
+  "2.1.2": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-trapping.html",
+    title: "No Keyboard Trap",
+    impact: "Critical",
+    impactScore: 4,
+    goal: "Keyboard focus should not trap focus on an element.",
+    solution: "Content which allows keyboard focus must allow keyboard blur.",
+  },
+  "2.3.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html",
+    title: "Three Flashes or Below Threshold",
+    impact: "Critical",
+    impactScore: 4,
+    goal: "Users must be able to use a website without inducing seizures.",
+    solution:
+      "Websites do not contain any flashing above three times in one second.",
+  },
+  "3.1.1": {
+    link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html",
+    title: "Language of Page",
+    impact: "Moderate",
+    impactScore: 2,
+    goal: "User agents should be able to discern the page language.",
+    solution: "Developers must provide the page language in the source code.",
+  },
+  "3.1.2": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-other-lang-id.html",
+    title: "Language of Parts",
+    impact: "Moderate",
+    impactScore: 2,
+    goal:
+      "User agents can correctly present page content written in multiple languages.",
+    solution:
+      "The language of page content can be programmatically determined.",
+  },
+  "4.1.1": {
+    link:
+      "https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-parses.html",
+    title: "Parsing",
+    impact: "Critical",
+    impactScore: 4,
+    goal: "User agents can accurately parse page content.",
+    solution:
+      "Markup code must be complete with start and end tags, nested properly, and contain unique IDs.",
+  },
+  "4.1.2": {
+    link: "https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-rsv.html",
+    title: "Name, Role, Value",
+    impact: "Critical",
+    impactScore: 4,
+    goal:
+      "User agents must be able to discern the state of controls within the page content.",
+    solution:
+      "Name and role of components such as form elements and links can be determined as well as their states, properties, and values.",
   },
 }
 

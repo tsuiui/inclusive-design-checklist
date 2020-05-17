@@ -11,7 +11,6 @@ export const ChecklistItem = ({ guideline, guidelineParams }) => {
           <span className="checkmark"></span>
         </label>
         <h1>{title}</h1>
-        <div className={`impact impact--${impact.toLowerCase()}`}>{impact}</div>
       </div>
       <h2 className="checklist-goal">Goal</h2>
       <p>{goal}</p>
@@ -31,6 +30,9 @@ export const ChecklistItem = ({ guideline, guidelineParams }) => {
           />
         </span>
         Guideline {guideline} - {title}
+        <span className={`impact impact--${impact.toLowerCase()}`}>
+          {impact}
+        </span>
       </a>
     </div>
   )

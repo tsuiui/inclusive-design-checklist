@@ -30,13 +30,13 @@
 }
 
 .layout button.button--print {
-  font-size: 12px;
-  height: 28px;
+  font-size: 16px;
+  height: 40px;
   width: auto;
   padding: 0 24px;
-  border-radius: 70px;
+  border-radius: 4px;
   position: absolute;
-  right: 48px;
+  right: 158px;
 }
 
 .guideline-badge {
@@ -73,6 +73,7 @@
   display: flex;
   justify-content: flex-end;
   width: 600px;
+  margin-top: 24px;
 }
 
 .button--back {
@@ -141,9 +142,13 @@ input[type="radio"]:checked + label {
 }
 
 .checklist-item-wrapper {
-  max-width: 750px;
+  max-width: 1440px;
   padding: 24px 0;
   margin-bottom: 60px;
+}
+
+.checklist-item-wrapper > p {
+  max-width: 740px;
 }
 
 .checklist-item-title {
@@ -186,8 +191,8 @@ input[type="radio"]:checked + label {
   left: 0;
   height: 32px;
   width: 32px;
-  border: 2px solid #004fbd;
-  background-color: #eee;
+  border: 1px solid #b3bfcf;
+  border-radius: 2px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -233,22 +238,23 @@ input[type="radio"]:checked + label {
   Impact scores
 */
 .impact {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: #25282d;
   border: none;
   border-radius: 50px;
-  padding: 0 12px;
-  max-width: 78px;
+  padding: 0 18px;
+  max-width: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 28px;
   margin-left: auto;
+  text-transform: uppercase;
 }
 
 .impact--minor {
-  background: #ffffff;
+  background: #dee4ec;
 }
 
 .impact--moderate {
