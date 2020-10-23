@@ -22,7 +22,7 @@ export const designQuestions = [
     addToChecklist: false,
   },
   {
-    question: "Are there any input fields",
+    question: "Are there any input fields?",
     addToChecklist: false,
     guidelines: ["3.3.1", "3.3.2", "3.3.3"],
     visited: false,
